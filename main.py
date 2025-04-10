@@ -21,7 +21,7 @@ hypergraph, E = utils.load_hypergraph(args.network)
 
 if args.algorithm == "ks":
     start_time = time.time()
-    G = nbr_ks_core.run(hypergraph, args.k, args.s)
+    G = nbr_ks_core.run(hypergraph, E, args.k, args.s)
     end_time = time.time()
 
 memory_after = process.memory_info().rss / (1024 * 1024)  # Convert to MB

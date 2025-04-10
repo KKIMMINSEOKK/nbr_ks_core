@@ -20,3 +20,14 @@ def load_hypergraph(file_path):
                 hypergraph.nodes[node]['hyperedges'].append(hyperedge)  # Add the hyperedge to the node's hyperedge set
 
     return hypergraph, E
+
+def hyperedges_count(hypergraph, node): # count the number of hyperedges that contain the node = degree
+    return len(hypergraph.nodes[node]['hyperedges'])
+
+def edge_count(nodes,hyperedges): # Find a hyperedge that contains node
+    edges = list()
+    for hyperedge in hyperedges:
+
+        if len(set(nodes) - hyperedge) == len(nodes) - len(hyperedge) :
+            edges.append(hyperedge)
+    return len(edges)
