@@ -12,6 +12,7 @@ parser.add_argument("--network", help="Path to the network file"
                     ,default='./ex.hyp')
 parser.add_argument("--k", type=int, help="Value of k",default=2)
 parser.add_argument("--s", type=float, help="Value of s",default=0.5)
+parser.add_argument("--c", type=int, help="Value of c",default=1)
 args = parser.parse_args()
 
 process = psutil.Process(os.getpid())
@@ -21,7 +22,7 @@ hypergraph, E = utils.load_hypergraph(args.network)
 
 if args.algorithm == "ks":
     start_time = time.time()
-    G = nbr_ks_core.run(hypergraph, E, args.k, args.s)
+    G = nbr_ks_core.run(hypergraph, E, args.k, args.s, args.c)
     end_time = time.time()
 
 memory_after = process.memory_info().rss / (1024 * 1024)  # Convert to MB
@@ -30,7 +31,7 @@ memory_usage = memory_after - memory_before  # Calculate memory used
 # Write results to file
 output_dir = os.path.dirname(args.network)
 
-output_filename = f"{args.algorithm}_{args.k}_{args.s}_core.dat"
+output_filename = f"{args.algorithm}_{args.k}_{args.s}_{args.c}_core.dat"
 output_path = os.path.join(output_dir, output_filename)
 
 with open(output_path, 'w') as output_file:

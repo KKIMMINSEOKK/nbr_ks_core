@@ -6,7 +6,7 @@ import utils
 # Argument parser for command-line arguments
 parser = argparse.ArgumentParser(description="Extract data from ks files and save to CSV")
 parser.add_argument("--directory", help="Path to the directory containing files"
-                    , default='./datasets/real/congress/')
+                    , default='./datasets/real/contact/')
 parser.add_argument("--output", help="Output CSV file name", default='summary.csv')
 args = parser.parse_args()
 
@@ -29,6 +29,7 @@ for filename in os.listdir(args.directory):
         algorithm = "ks"
         k = int(filename.split("_")[1])
         s = float(filename.split("_")[2])
+        c = int(filename.split("_")[3])
 
         # Read the file to get node count, runtime, and nodes
         with open(file_path, 'r') as file:
@@ -68,10 +69,11 @@ for filename in os.listdir(args.directory):
 
 
             # Store EPA data in a dictionary with (k, g) as the key
-            data[(k, s)] = {
+            data[(k, s, c)] = {
                 "algorithm": algorithm,
                 "k": k,
                 "s": s,
+                "c": c,
                 "# of nodes": num_of_nodes,
                 "runtime": runtime,
                 "average_degree": average_degree,
@@ -83,7 +85,7 @@ data = list(data.values())
 
 # Write the data to a CSV file
 with open(output_csv_path, 'w', newline='') as csvfile:
-    fieldnames = ["algorithm", "k", "s", "# of nodes", "runtime", "average_degree", "average_cardinality", "dataset"]
+    fieldnames = ["algorithm", "k", "s", "c", "# of nodes", "runtime", "average_degree", "average_cardinality", "dataset"]
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
     writer.writeheader()

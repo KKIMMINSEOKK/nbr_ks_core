@@ -14,5 +14,6 @@ with open("run.sh", "w") as f:
     for file in file:
         for k in range(10,60,10):
             for s in range(0,10):
-                print(f"python3 main.py --network {dir}{file}/network.hyp --algorithm ks --k {k} --s {round(s * 0.1, 1)} &&")
-                f.write(f"python3 main.py --network {dir}{file}/network.hyp --algorithm ks --k {k} --s {round(s * 0.1, 1)} &&\n")
+                for c in range(1,3):
+                    print(f"python3 main.py --network {dir}{file}/network.hyp --algorithm ks --k {k} --s {round(s * 0.1, 1)} --c {c} &&")
+                    f.write(f"python3 main.py --network {dir}{file}/network.hyp --algorithm ks --k {k} --s {round(s * 0.1, 1)} --c {c} &&\n")

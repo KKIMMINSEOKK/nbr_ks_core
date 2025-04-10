@@ -1,50 +1,100 @@
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.0 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.1 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.2 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.3 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.4 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.5 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.6 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.7 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.8 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.9 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.0 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.1 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.2 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.3 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.4 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.5 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.6 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.7 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.8 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.9 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.0 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.1 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.2 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.3 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.4 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.5 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.6 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.7 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.8 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.9 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.0 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.1 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.2 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.3 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.4 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.5 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.6 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.7 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.8 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.9 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.0 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.1 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.2 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.3 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.4 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.5 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.6 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.7 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.8 &&
-python main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.9 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.0 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.0 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.1 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.1 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.2 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.2 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.3 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.3 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.4 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.4 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.5 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.5 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.6 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.6 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.7 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.7 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.8 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.8 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.9 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 10 --s 0.9 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.0 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.0 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.1 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.1 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.2 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.2 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.3 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.3 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.4 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.4 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.5 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.5 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.6 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.6 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.7 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.7 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.8 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.8 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.9 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 20 --s 0.9 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.0 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.0 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.1 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.1 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.2 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.2 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.3 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.3 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.4 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.4 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.5 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.5 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.6 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.6 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.7 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.7 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.8 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.8 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.9 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 30 --s 0.9 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.0 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.0 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.1 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.1 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.2 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.2 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.3 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.3 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.4 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.4 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.5 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.5 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.6 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.6 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.7 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.7 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.8 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.8 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.9 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 40 --s 0.9 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.0 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.0 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.1 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.1 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.2 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.2 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.3 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.3 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.4 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.4 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.5 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.5 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.6 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.6 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.7 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.7 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.8 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.8 --c 2 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.9 --c 1 &&
+python3 main.py --network ./datasets/real/contact/network.hyp --algorithm ks --k 50 --s 0.9 --c 2
