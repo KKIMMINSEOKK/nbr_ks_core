@@ -16,7 +16,7 @@ def load_hypergraph(file_path):
             E.append(hyperedge)
             for node in nodes:
                 if node not in hypergraph.nodes():
-                    hypergraph.add_node(node, hyperedges=list())  # Add a node for each node
+                    hypergraph.add_node(node, hyperedges=list(), max_s=0)  # Add a node for each node
                 hypergraph.nodes[node]['hyperedges'].append(hyperedge)  # Add the hyperedge to the node's hyperedge set
 
     return hypergraph, E

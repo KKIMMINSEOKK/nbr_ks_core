@@ -5,14 +5,15 @@ import os
 import time
 
 import nbr_ks_core
+import strongly_induced
 
 parser = argparse.ArgumentParser(description="Peeling Algorithm for Hypergraph nbr-(k,s)-core")
-parser.add_argument("--algorithm", help="Algorithm to use", choices=["ks"], default="ks")
+parser.add_argument("--algorithm", help="Algorithm to use", choices=["ks", "str"], default="ks")
 parser.add_argument("--network", help="Path to the network file"
                     ,default='./ex.hyp')
 parser.add_argument("--k", type=int, help="Value of k",default=2)
 parser.add_argument("--s", type=float, help="Value of s",default=0.5)
-parser.add_argument("--c", type=int, help="Value of c",default=1)
+parser.add_argument("--c", type=float, help="Value of c",default=1)
 args = parser.parse_args()
 
 process = psutil.Process(os.getpid())
@@ -22,7 +23,12 @@ hypergraph, E = utils.load_hypergraph(args.network)
 
 if args.algorithm == "ks":
     start_time = time.time()
-    G = nbr_ks_core.run(hypergraph, E, args.k, args.s, args.c)
+    G = nbr_ks_core.run(hypergraph, args.k, args.s, args.c)
+    end_time = time.time()
+
+if args.algorithm == "str":
+    start_time = time.time()
+    G = strongly_induced.run(hypergraph, args.k, args.s, args.c)
     end_time = time.time()
 
 memory_after = process.memory_info().rss / (1024 * 1024)  # Convert to MB

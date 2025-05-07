@@ -1,74 +1,51 @@
-import numpy as np
 from queue import Queue
 
-### python3 main.py --network ./datasets/real/congress/network.hyp --algorithm ks --k 20 --s 0.5 ###
+### python3 main.py --network ./datasets/real/congress/network.hyp --algorithm ks --k 10 --s 2 --c 1 ###
 
-# def remove_incident_edges(hypergraph, u):
-#     for edge in hypergraph.nodes[u]['hyperedges']:
-#         for neighbour in edge:
-#             if neighbour != u:
-#                 if edge in hypergraph.nodes[neighbour]['hyperedges']:
-#                     hypergraph.nodes[neighbour]['hyperedges'].remove(edge)
-#     return hypergraph
+def getNbrMap(hypergraph, node, s, c, min):
+    strengths = {}
 
-def decay(x, c):
-    return 1 / (x ** c)
+    for hyperedge in hypergraph.nodes[node]['hyperedges']:
+        for neighbor in hyperedge:
+            if neighbor != node:
+                strengths[neighbor] = strengths.get(neighbor,0) + (1 / (len(hyperedge) ** c))
+    s_neighbors = {node: strength for node, strength in strengths.items() if strength >= s - min}
+    return s_neighbors
 
-def run(hypergraph, E, k, s, c):
+def run(hypergraph, k, s, c):
     min = 1/(len(hypergraph.nodes) ** c + 1) # due to floating-point precision error
-    deg = np.zeros(len(hypergraph.nodes) + 1)
-    closeness = np.zeros((len(hypergraph.nodes) + 1, len(hypergraph.nodes) + 1))
 
-    for u in hypergraph.nodes:
-        for e in hypergraph.nodes[u]['hyperedges']:
-            for v in e:
-                if u < v:
-                    closeness[u][v] += 1 / (len(e) ** c)
-                    closeness[v][u] += 1 / (len(e) ** c)
-        for v in hypergraph.nodes:
-            if u < v and closeness[u][v] >= s - min:
-                deg[u] += 1
-                deg[v] += 1
+    H = set(hypergraph.nodes())
+    S = {}
+    VQ = Queue()
+    VQ1 = set()
+    # time_report = 0
 
-    # for e in E:
-    #     for u in e:
-    #         for v in e:
-    #             if u < v:
-    #                 closeness[u][v] += decay(len(e), c)
-                    # closeness[v][u] += decay(len(e), c)
-    #         for v in hypergraph.nodes:
-    #             if u < v and closeness[u][v] >= s - min:
-    #                 deg[u] += 1
-    #                 deg[v] += 1
+    for v in H:
+        # time2 = time.time()
+        s_neighbors = getNbrMap(hypergraph, v, s, c, min)
+        # time3 = time.time()
+        # time_report += time3 - time2
+        S[v] = len(s_neighbors)
+        if S[v] < k:
+            VQ.put(v)
+            VQ1.add(v)
+    while not VQ.empty():
+        v = VQ.get()
+        # time2 = time.time()
+        s_neighbors = getNbrMap(hypergraph, v, s, c, min)
+        # time3 = time.time()
+        # time_report += time3 - time2
+        H.remove(v)
+        del S[v]
+        for w in s_neighbors:
+            if w not in VQ1:
+                S[w] -= 1
+                if S[w] < k:
+                    VQ.put(w)
+                    VQ1.add(w)
 
-    Q = Queue()
-    for u in hypergraph.nodes:
-        if deg[u] < k:
-            Q.put(u)
+    # print(H)
 
-    V = set(hypergraph.nodes)
-    while not Q.empty():
-        u = Q.get()
-
-        for e in hypergraph.nodes[u]['hyperedges']:
-            for v in e:
-                for w in e:
-                    if v >= w:
-                        continue
-                    if closeness[v][w] > s - min:
-                        closeness[v][w] -= 1 / (len(e) ** c)
-                        closeness[w][v] -= 1 / (len(e) ** c)
-                        if closeness[v][w] < s - min:
-                            deg[v] -= 1
-                            deg[w] -= 1
-                    else:
-                        closeness[v][w] -= 1 / (len(e) ** c)
-                        closeness[w][v] -= 1 / (len(e) ** c)
-                if deg[v] < k and v not in list(Q.queue) and v != u:
-                    Q.put(v)
-                if v != u:
-                    hypergraph.nodes[v]['hyperedges'].remove(e)
-
-        V.remove(u)
-
-    return hypergraph.subgraph(V)
+    return hypergraph.subgraph(H)
+    # return H, time_report
